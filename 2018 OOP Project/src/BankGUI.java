@@ -4,13 +4,14 @@ import java.awt.event.*;
 import java.util.*;
 
 
-public class MainGUI extends JFrame {
+public class BankGUI extends JFrame {
+
     JTextField TextField,UserNameField;
     JPasswordField PasswordField;
     JButton ViewBalance;
     JFrame jFrameWindow;
 
-    public MainGUI() {
+    public BankGUI() {
 
         JFrame jframewindow = new JFrame("Banking app");
 
@@ -34,48 +35,32 @@ public class MainGUI extends JFrame {
 
         jframewindow.add(promptLabel);
 
-        ViewBalance = new JButton("View current balance");
+        JButton viewBalance =  new JButton("View current balance");
 
-      //  ButtonEventHandler buttonEventHandler = new ButtonEventHandler();
+        jFrameWindow.add(viewBalance);
 
-       // ViewBalance.addActionListener(buttonEventHandler);
+        ButtonEventHandler handler = new ButtonEventHandler();
+
+        viewBalance.addActionListener(handler);
 
 
     }
 
     public static void main(String[] args) {
-        MainGUI gui = new MainGUI();
+        BankGUI gui = new BankGUI();
     }
-
-    private class ButtomEventHandler implements ActionListener {
-
-        public void actionperformed(ActionEvent e) {
-            if (e.getSource() == ViewBalance) {
-                JFrame BalanceWindow = new JFrame("Balance Details");
-
-                FlowLayout flowLayout = new FlowLayout();
-
-                BalanceWindow.setLayout(flowLayout);
-
-                BalanceWindow.setSize(500,250);
-
-                JLabel UserNameLabel = new JLabel("UserName");
-                BalanceWindow.add(UserNameLabel);
-
-                UserNameField = new JTextField(10);
-                BalanceWindow.add(UserNameField);
-
-                JLabel PasswordLabel = new JLabel("Password");
-                BalanceWindow.add(PasswordLabel);
-
-                PasswordField = new JPasswordField(10);
-                BalanceWindow.add(PasswordField);
-
-                BalanceWindow.setLocation(200,200);
-
-                BalanceWindow.setVisible(true);
-            }
-            else if()
+  private class ButtonEventHandler implements ActionListener{
+        public void actionPerformed(ActionEvent e)
+        {
+         if(e.getSource()==ViewBalance){
+             JFrame viewBalance = new JFrame("Balance");
+             FlowLayout flowLayout = new FlowLayout();
+             viewBalance.setLayout(flowLayout);
+             viewBalance.setSize(500,500);
+             viewBalance.setLocation(250,250);
+             viewBalance.setVisible(true);
+         }
         }
-    }
+  }
+
 }

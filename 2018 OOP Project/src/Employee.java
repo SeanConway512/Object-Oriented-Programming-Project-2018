@@ -1,8 +1,9 @@
 public class Employee extends Person{
 
-    private String name, address, email,userName,password;
-    private float empNum;
+    private String name,address,email,userName,password;
+    private float empNum,ppsNo;
     private int phone;
+   // private Person;
 
     public String getName(){return name;}
     public void setName(String name){this.name = name;}
@@ -20,14 +21,18 @@ public class Employee extends Person{
     public void setPhone(int phone){this.phone = phone;}
 
     public String getUserName(){return userName;}
-    public void setUserName(String userName){this.userName=userName;}
+    public void setUserName(String userName){this.userName = userName;}
 
     public String getPassword(){return password;}
     public void setPassword(String password){this.password = password;}
 
-    public Employee(){this("Unknown","N/A","N/A", 0.0f,0,null,null);}
+    public float getPpsNo(){return ppsNo;}
+    public void setPpsNo(float ppsNo){this.ppsNo = ppsNo;}
 
-    public Employee(String name,String address,String email,float empNum,int phone,String userName,String password){
+    public Employee(){this("Unknown","N/A","N/A", 0.0f,0,null,null,0.0f);}
+
+    public Employee(String name,String address,String email,float empNum,int phone,String userName,String password,float ppsNo)
+    {
         setName(name);
         setAddress(address);
         setEmail(email);
@@ -35,6 +40,7 @@ public class Employee extends Person{
         setPhone(phone);
         setUserName(userName);
         setPassword(password);
+        setPpsNo(ppsNo);
     }
 
 }
