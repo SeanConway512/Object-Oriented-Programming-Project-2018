@@ -36,9 +36,9 @@ public class MainGUI extends JFrame {
 
         ViewBalance = new JButton("View current balance");
 
-        ButtonEventHandler buttonEventHandler = new ButtonEventHandler();
+      //  ButtonEventHandler buttonEventHandler = new ButtonEventHandler();
 
-        ViewBalance.addActionListener(buttonEventHandler);
+       // ViewBalance.addActionListener(buttonEventHandler);
 
 
     }

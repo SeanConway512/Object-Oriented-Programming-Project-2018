@@ -1,2 +1,2 @@
-public class MortgageAccount {
+public class MortgageAccount extends Account{
 }
