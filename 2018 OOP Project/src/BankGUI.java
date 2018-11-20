@@ -6,14 +6,14 @@ import java.util.*;
 
 public class BankGUI extends JFrame {
 
-    JTextField TextField,UserNameField;
-    JPasswordField PasswordField;
-    JButton LogIn;
-    JFrame jFrameWindow;
+   private JTextField TextField,UserNameField;
+   private JPasswordField PasswordField;
+   private JButton LogIn;
+   public JFrame jFrameWindow;
 
     public BankGUI() {
 
-        JFrame jframewindow = new JFrame("Bank");
+        JFrame jFrameWindow = new JFrame("Bank");
 
         FlowLayout flowLayout = new FlowLayout();
 
@@ -21,19 +21,21 @@ public class BankGUI extends JFrame {
 
         setTitle("Bank");
 
-        setSize(750, 750);
+        setSize(500, 500);
 
         setLocation(250, 250);
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        setBackground(Color.blue);
+        Color myColor = new Color(200,220,240);
+
+        setBackground(myColor);
 
         JLabel promptLabel = new JLabel("Hello sir/madam, what would you like to do today?");
 
-        jframewindow.add(promptLabel);
+        jFrameWindow.add(promptLabel);
 
-        JButton logIn =  new JButton("View current balance");
+        JButton logIn =  new JButton("Log in");
 
         jFrameWindow.add(logIn);
 
@@ -47,18 +49,25 @@ public class BankGUI extends JFrame {
     Scanner input = new Scanner(System.in);
 
     public static void main(String[] args) {
+
      BankGUI gui = new BankGUI();
+
     }
+
   private class ButtonEventHandler implements ActionListener{
+
         public void actionPerformed(ActionEvent e)
         {
          if(e.getSource()==LogIn){
-             JFrame viewBalance = new JFrame("Balance");
+             JFrame LogIn = new JFrame("Balance");
              FlowLayout flowLayout = new FlowLayout();
-             viewBalance.setLayout(flowLayout);
-             viewBalance.setSize(500,500);
-             viewBalance.setLocation(250,250);
-             viewBalance.setVisible(true);
+             LogIn.setLayout(flowLayout);
+             LogIn.setVisible(true);
+             JOptionPane.showInputDialog(null,Arrays.toString(UserNameField),"UserName",JOptionPane.INFORMATION_MESSAGE);
+         }
+        else
+            {
+
          }
         }
   }

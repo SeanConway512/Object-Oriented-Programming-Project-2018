@@ -42,6 +42,7 @@ public class Employee extends Person {
         setPassword(password);
         setPpsNo(ppsNo);
     }
+
    @Override
     public String toString(){
         return String.format(" Name:%20s\n Address:%20s\n Email:%20s\n Username:%20s\n Password:%20s\n EmpNum:%20s\n PPSNO:%20s\n Phone:%20s\n\n ",

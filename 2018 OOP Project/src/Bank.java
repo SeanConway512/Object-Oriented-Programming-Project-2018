@@ -7,4 +7,5 @@ public class Bank {
     private int Employee[] = new int[20],PhoneNumber;
     private String Name,Address;
 
+
 }
