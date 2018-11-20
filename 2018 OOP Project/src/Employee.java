@@ -1,4 +1,4 @@
-public class Employee extends Person{
+public class Employee extends Person {
 
     private String name,address,email,userName,password;
     private float empNum,ppsNo;
@@ -15,7 +15,7 @@ public class Employee extends Person{
     public void setEmail(String email){this.email = email;}
 
     public float getEmpNum(){return empNum;}
-    public void setEmpNum(float empnum){this.empNum = empNum;}
+    public void setEmpNum(float empNum){this.empNum = empNum;}
 
     public int getPhone(){return phone;}
     public void setPhone(int phone){this.phone = phone;}
@@ -42,5 +42,9 @@ public class Employee extends Person{
         setPassword(password);
         setPpsNo(ppsNo);
     }
-
+   @Override
+    public String toString(){
+        return String.format(" Name:%20s\n Address:%20s\n Email:%20s\n Username:%20s\n Password:%20s\n EmpNum:%20s\n PPSNO:%20s\n Phone:%20s\n\n ",
+                getName(),getAddress(),getEmail(),getEmpNum(),getPhone(),getUserName(),getPassword(),getPpsNo());
+   }
 }

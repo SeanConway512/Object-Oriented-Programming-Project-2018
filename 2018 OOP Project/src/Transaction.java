@@ -1,7 +1,7 @@
 import java.util.*;
 
-public class Transaction {
+public class Transaction extends Account{
 
-    ArrayList<Customer> customers=new ArrayList<>();
+    ArrayList<Transaction>transactions=new ArrayList<>();
 
 }

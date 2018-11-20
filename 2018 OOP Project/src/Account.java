@@ -1,6 +1,6 @@
 import java.util.*;
 
-public abstract class Account {
+public abstract class Account extends Customer{
 
        ArrayList<Customer> customers=new ArrayList<>();
        private String name,accid;
@@ -8,6 +8,6 @@ public abstract class Account {
        public float interestRate,change;
 
        public float InterestRateChange(){
-          return interestRate *change;
+          return interestRate * change;
        }
 }

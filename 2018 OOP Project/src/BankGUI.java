@@ -8,18 +8,18 @@ public class BankGUI extends JFrame {
 
     JTextField TextField,UserNameField;
     JPasswordField PasswordField;
-    JButton ViewBalance;
+    JButton LogIn;
     JFrame jFrameWindow;
 
     public BankGUI() {
 
-        JFrame jframewindow = new JFrame("Banking app");
+        JFrame jframewindow = new JFrame("Bank");
 
         FlowLayout flowLayout = new FlowLayout();
 
         jFrameWindow.setLayout(flowLayout);
 
-        setTitle("Banking app");
+        setTitle("Bank");
 
         setSize(750, 750);
 
@@ -27,32 +27,32 @@ public class BankGUI extends JFrame {
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        setVisible(true);
-
         setBackground(Color.blue);
 
         JLabel promptLabel = new JLabel("Hello sir/madam, what would you like to do today?");
 
         jframewindow.add(promptLabel);
 
-        JButton viewBalance =  new JButton("View current balance");
+        JButton logIn =  new JButton("View current balance");
 
-        jFrameWindow.add(viewBalance);
+        jFrameWindow.add(logIn);
 
         ButtonEventHandler handler = new ButtonEventHandler();
 
-        viewBalance.addActionListener(handler);
+        logIn.addActionListener(handler);
 
-
+        setVisible(true);
     }
 
+    Scanner input = new Scanner(System.in);
+
     public static void main(String[] args) {
-        BankGUI gui = new BankGUI();
+     BankGUI gui = new BankGUI();
     }
   private class ButtonEventHandler implements ActionListener{
         public void actionPerformed(ActionEvent e)
         {
-         if(e.getSource()==ViewBalance){
+         if(e.getSource()==LogIn){
              JFrame viewBalance = new JFrame("Balance");
              FlowLayout flowLayout = new FlowLayout();
              viewBalance.setLayout(flowLayout);
