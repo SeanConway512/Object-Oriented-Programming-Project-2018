@@ -15,12 +15,14 @@ public abstract class Account extends Customer{
        public Account(){this(null,"","",0.0f,0.0f,0.0f);}
 
        public Account(Person accHolder,String name,String accid,float balance,float interestRate,float change){
+
            this.accHolder=accHolder;
            this.name=name;
            this.accid=accid;
            this.balance=balance;
            this.interestRate=interestRate;
            this.change=change;
+
        }
 
 }

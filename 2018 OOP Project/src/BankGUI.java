@@ -6,8 +6,8 @@ import java.util.*;
 
 public class BankGUI extends JFrame {
 
-   private JTextField TextField,UserNameField;
-   private JPasswordField PasswordField;
+   private JTextField TextField,usernameField;
+   private JPasswordField passwordField;
    private JButton LogIn;
    public JFrame jFrameWindow;
 
@@ -19,31 +19,31 @@ public class BankGUI extends JFrame {
 
         jFrameWindow.setLayout(flowLayout);
 
-        setTitle("Bank");
+        jFrameWindow.setTitle("Bank");
 
-        setSize(500, 500);
+        jFrameWindow.setSize(1250,750);
 
-        setLocation(250, 250);
+        jFrameWindow.setLocation(500, 200);
 
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        jFrameWindow.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Color myColor = new Color(200,220,240);
 
-        setBackground(myColor);
+        jFrameWindow.setBackground(myColor);
 
         JLabel promptLabel = new JLabel("Hello sir/madam, what would you like to do today?");
 
         jFrameWindow.add(promptLabel);
 
-        JButton logIn =  new JButton("Log in");
+        JButton LogIn =  new JButton("Log in");
 
-        jFrameWindow.add(logIn);
+        jFrameWindow.add(LogIn);
 
         ButtonEventHandler handler = new ButtonEventHandler();
 
-        logIn.addActionListener(handler);
+        LogIn.addActionListener(handler);
 
-        setVisible(true);
+        jFrameWindow.setVisible(true);
     }
 
     Scanner input = new Scanner(System.in);
@@ -54,21 +54,42 @@ public class BankGUI extends JFrame {
 
     }
 
-  private class ButtonEventHandler implements ActionListener{
+  private class ButtonEventHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent e)
         {
-         if(e.getSource()==LogIn){
-             JFrame LogIn = new JFrame("Balance");
+         if(e.getSource()==LogIn)
+
+         {
+             String username = usernameField.getText();
+             char[] password = passwordField.getPassword();
+
+             JFrame LogIn = new JFrame("Log in");
+
              FlowLayout flowLayout = new FlowLayout();
+
              LogIn.setLayout(flowLayout);
+
              LogIn.setVisible(true);
-             JOptionPane.showInputDialog(null,Arrays.toString(UserNameField),"UserName",JOptionPane.INFORMATION_MESSAGE);
-         }
-        else
-            {
+
+             JLabel usernameLabel = new JLabel("Username");
+             LogIn.add(usernameLabel);
+
+             usernameField = new JTextField(10);
+             LogIn.add(usernameField);
+
+             JLabel passwordLabel = new JLabel("Password");
+             LogIn.add(passwordLabel);
+
+             passwordField = (JPasswordField) new JTextField(15);
+             LogIn.add(passwordField);
+
+             LogIn.setVisible(true);
+
+
 
          }
+
         }
   }
 

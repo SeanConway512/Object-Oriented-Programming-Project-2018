@@ -4,11 +4,7 @@ public class MortgageAccount extends Account{
    private String repaymentInterval;
 
 
-   public static double getRepayment(){
-   return getRepayment();
-   }
+   public static double getRepayment(){return getRepayment();}
 
-   public static String getRepaymentInterval(){
-   return getRepaymentInterval();
-   }
+   public static String getRepaymentInterval(){return getRepaymentInterval();}
 }
