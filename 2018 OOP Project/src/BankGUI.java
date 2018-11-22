@@ -4,46 +4,57 @@ import java.awt.event.*;
 import java.util.*;
 
 
-public class BankGUI extends JFrame {
+public class BankGUI extends JFrame implements ActionListener{
 
    private JTextField TextField,usernameField;
    private JPasswordField passwordField;
-   private JButton LogIn;
+   private JButton enterButton, exitButton;
    public JFrame jFrameWindow;
 
     public BankGUI() {
 
-        JFrame jFrameWindow = new JFrame("Bank");
-
+        Container cPane = getContentPane();
         FlowLayout flowLayout = new FlowLayout();
+        cPane.setLayout(new FlowLayout());
+        JLabel pwLabel = new JLabel("Enter your password");
+        JTextField pwText = new JPasswordField();
+        JLabel usLabel = new JLabel("Enter your username");
+        JTextField usText = new JTextField();
+        enterButton = new JButton("Enter");
+        exitButton = new JButton("Exit");
+        cPane.add(pwLabel);
+        cPane.add(pwText);
+        cPane.add(usLabel);
+        cPane.add(usText);
+        cPane.add(enterButton);
+        cPane.add(exitButton);
 
-        jFrameWindow.setLayout(flowLayout);
+        setLayout(flowLayout);
 
-        jFrameWindow.setTitle("Bank");
+        setTitle("Bank");
 
-        jFrameWindow.setSize(1250,750);
+        setSize(1250,750);
 
-        jFrameWindow.setLocation(500, 200);
+        setLocation(500, 200);
 
-        jFrameWindow.setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
 
         Color myColor = new Color(200,220,240);
 
-        jFrameWindow.setBackground(myColor);
+        cPane.setBackground(Color.cyan);
 
-        JLabel promptLabel = new JLabel("Hello sir/madam, what would you like to do today?");
+        //jFrameWindow.setForeground(myColor);
+       // JLabel promptLabel = new JLabel("Hello sir/madam, what would you like to do today?");
 
-        jFrameWindow.add(promptLabel);
+      //  cPane.add(promptLabel);
 
-        JButton LogIn =  new JButton("Log in");
 
-        jFrameWindow.add(LogIn);
 
-        ButtonEventHandler handler = new ButtonEventHandler();
+       // ButtonEventHandler buttonHandler = new ButtonEventHandler();
 
-        LogIn.addActionListener(handler);
-
-        jFrameWindow.setVisible(true);
+        enterButton.addActionListener(this);
+        exitButton.addActionListener(this);
+        //jFrameWindow.setVisible(true);
     }
 
     Scanner input = new Scanner(System.in);
@@ -51,26 +62,46 @@ public class BankGUI extends JFrame {
     public static void main(String[] args) {
 
      BankGUI gui = new BankGUI();
+     gui.setVisible(true);
 
     }
 
-  private class ButtonEventHandler implements ActionListener {
+  //private class ButtonEventHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent e)
         {
-         if(e.getSource()==LogIn)
+         if(e.getSource()== enterButton)
 
-         {
+      //   {
+             JOptionPane.showMessageDialog(null, "Welcome");
+
+             JTextArea textArea = new JTextArea();
+             Font font = new Font("monospaced",Font.PLAIN,12);
+             String text="";
+             textArea.setFont(font);
+             textArea.append(text);
+             JOptionPane.showMessageDialog(null,"Please enter your password");
+
+             //passwordField=input.next();
+            // System.exit(0);
              String username = usernameField.getText();
+             usernameField.setSize(200,500);
+             usernameField.setLocation(200,500);
              char[] password = passwordField.getPassword();
+             passwordField.setSize(200,500);
+             passwordField.setLocation(200,500);
+            // jFrameWindow.add
 
-             JFrame LogIn = new JFrame("Log in");
+             /*JFrame LogIn = new JFrame("Log in");
 
              FlowLayout flowLayout = new FlowLayout();
 
              LogIn.setLayout(flowLayout);
 
              LogIn.setVisible(true);
+
+             LogIn.setSize(1250,500);
+
 
              JLabel usernameLabel = new JLabel("Username");
              LogIn.add(usernameLabel);
@@ -86,11 +117,13 @@ public class BankGUI extends JFrame {
 
              LogIn.setVisible(true);
 
-
-
-         }
+*/
+        // }
+   if(e.getSource()==exitButton){
+       JOptionPane.showMessageDialog(null,"Goodbye,hope to see you again");
 
         }
-  }
 
-}
+        }
+
+  }
