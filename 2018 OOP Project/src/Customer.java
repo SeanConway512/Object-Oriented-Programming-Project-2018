@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Customer extends Person{
 
-       private float custid;
+       public float custid;
        ArrayList<Customer> customers=new ArrayList<>();
 
 

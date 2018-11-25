@@ -1,9 +1,9 @@
 public class Employee extends Person {
 
-    private String name,address,email,userName,password;
-    private float empNum,ppsNo;
-    private int phone;
-    private Person Employee;
+    public String name,address,email,userName,password;
+    public float empNum,ppsNo;
+    public int phone;
+    public Person Employee;
 
     public String getName(){return name;}
     public void setName(String name){this.name = name;}

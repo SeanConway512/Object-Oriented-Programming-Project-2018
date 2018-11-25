@@ -5,12 +5,14 @@ import java.awt.event.*;
 import java.util.*;
 
 
-public class BankGUI extends JFrame implements ActionListener  {
+public class BankGUI extends JFrame{
 
-    private JTextField TextField, usernameField;
-    private JPasswordField passwordField;
-    private JButton enterButton, exitButton;
+    public JTextField TextField, usernameField;
+    public JPasswordField pin;
+    public String custID[] = new String[50];
+    public JButton enterButton, exitButton;
     public JFrame jFrameWindow;
+    public boolean authenticated;
 
     public BankGUI() {
 
@@ -68,10 +70,10 @@ public class BankGUI extends JFrame implements ActionListener  {
         //  cPane.add(promptLabel);
 
 
-        // ButtonEventHandler buttonHandler = new ButtonEventHandler();
+         ButtonEventHandler buttonHandler = new ButtonEventHandler();
 
-        enterButton.addActionListener(this);
-        exitButton.addActionListener(this);
+        enterButton.addActionListener(buttonHandler);
+        exitButton.addActionListener(buttonHandler);
 
     }
 
@@ -92,61 +94,29 @@ public class BankGUI extends JFrame implements ActionListener  {
     private class ButtonEventHandler implements ActionListener {
 
         public void actionPerformed(ActionEvent event) {
-            if (event.getSource() == enterButton)
+            if (event.getSource()==enterButton)
 
             {
+                enter(custID);
                 JOptionPane.showMessageDialog(null, "Welcome");
-
-
-             JTextArea textArea = new JTextArea();
-             Font font = new Font("monospaced",Font.PLAIN,12);
-             String text="";
-             textArea.setFont(font);
-             textArea.append(text);
-             JOptionPane.showMessageDialog(null,"Please enter your password");
-
-             passwordField=input.next();
-             System.exit(0);
-             String username = usernameField.getText();
-             usernameField.setSize(200,500);
-             usernameField.setLocation(200,500);
-             char[] password = passwordField.getPassword();
-             passwordField.setSize(200,500);
-             passwordField.setLocation(200,500);
-
-
-             JFrame LogIn = new JFrame("Log in");
-
-             FlowLayout flowLayout = new FlowLayout();
-
-             LogIn.setLayout(flowLayout);
-
-             LogIn.setVisible(true);
-
-             LogIn.setSize(1250,500);
-
-
-             JLabel usernameLabel = new JLabel("Username");
-             LogIn.add(usernameLabel);
-
-             usernameField = new JTextField(10);
-             LogIn.add(usernameField);
-
-             JLabel passwordLabel = new JLabel("Password");
-             LogIn.add(passwordLabel);
-
-             passwordField = (JPasswordField) new JTextField(15);
-             LogIn.add(passwordField);
-
-             LogIn.setVisible(true);
-
 
             }
 
-            if (event.getSource() == exitButton) {
-                JOptionPane.showMessageDialog(null, "Goodbye,hope to see you again");
+
+            if (event.getSource()==exitButton) {
+                JOptionPane.showMessageDialog(null, "Good luck and thanks!");
             }
 
         }
 
-    }}
+    }
+    private static void enter(String custID[]){
+
+        for(int i=0;i<custID.length;i++)
+        {
+          //  if()
+
+        }
+
+    }
+}

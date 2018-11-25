@@ -2,7 +2,7 @@ import java.util.*;
 
 public abstract class Account extends Customer{
 
-       ArrayList<Customer> customers=new ArrayList<>(35);
+       ArrayList<Customer>customers=new ArrayList<>(35);
        public Person accHolder;
        public String name,accid;
        public float balance;

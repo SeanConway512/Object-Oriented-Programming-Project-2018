@@ -1,5 +1,6 @@
 public abstract class Person {
-   private String name,address;
+
+   public String name,address;
 
    public Person(){
        this("Unknown","Unknown");
