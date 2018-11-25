@@ -3,8 +3,8 @@ import java.util.*;
 public abstract class Account extends Customer{
 
        ArrayList<Customer> customers=new ArrayList<>(35);
-       private Person accHolder;
-       private String name,accid;
+       public Person accHolder;
+       public String name,accid;
        public float balance;
        public float interestRate,change;
 

@@ -1,12 +1,14 @@
 import javax.swing.*;
 
 public class CurrentAccount extends Account {
+    private double amountRequired;
+    private float balance;
+    // public static float getBalance(){}
 
-       double amountRequired;
-       float balance;
+    public CurrentAccount(){
 
+    }
 
-      // public static float getBalance(){}
 
 
     public double MakeDeposit(){
