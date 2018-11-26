@@ -4,6 +4,7 @@ public class SavingsAccount extends Account{
     private final String TYPE="Savings";
 
     public double getInterestRate(){return interestRate;}
+
     public void setInterestRate(double InterestRate){this.interestRate = interestRate;}
 
     public SavingsAccount(double taxRate){
@@ -14,8 +15,8 @@ public class SavingsAccount extends Account{
    public static double getInterestInterval(){
         return getInterestInterval();
    }
-   public SavingsAccount(Person accHolder,String name,String accid,float balance,float interestRate,float change){
-        super(accHolder,name,accid,balance,interestRate,change);
+   public SavingsAccount(Person accHolder,String name,String accid,float balance,float interestRate,int custID,float change){
+        super(accHolder,name,accid,balance,interestRate,custID,change);
         this.taxRate=taxRate;
    }
    public double getTaxRate(){

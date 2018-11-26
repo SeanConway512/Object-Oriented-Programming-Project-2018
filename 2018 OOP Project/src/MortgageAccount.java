@@ -1,10 +1,26 @@
-public class MortgageAccount extends Account{
+import javax.swing.*;
+import java.awt.event.*;
+import java.text.*;
+import java.util.*;
 
-   private double repayment;
-   private String repaymentInterval;
+public class MortgageAccount extends Account {
+    JTextField Mortgage = new JTextField("");
+    JFrame mortgageFrame;
+    int loanAmount,termInYears;
+    double interestRate=0.05f;
+    double monthlyRate=interestRate/12.0;
+    int termInMonths = termInYears*12;
 
+    public class mortgageInputListener implements ActionListener {
 
-   public static double getRepayment(){return getRepayment();}
+        public void calculateRepayment() {
 
-   public static String getRepaymentInterval(){return getRepaymentInterval();}
+           // double monthlyPayment = (loanAmount * monthlyRate) / (1 - Math.pow((1 + monthlyRate, -termInMonths)));
+          //  return monthlyPayment;
+         input = Mortgage.getText();
+         System.out.println(input);
+
+        }
+
+    }
 }

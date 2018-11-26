@@ -85,6 +85,7 @@ public class BankGUI extends JFrame{
         gui.setVisible(true);
       /*  for(Window w: Window.getWindows()){
             GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().setFullScreenWindow(w);
+            }
     }*/
 
     }

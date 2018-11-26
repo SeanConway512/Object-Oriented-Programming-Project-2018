@@ -4,26 +4,31 @@ import java.util.*;
 import javax.swing.*;
 
 
-public class LogInGUI {
+public class LogInGUI extends JFrame{
 
     private JFrame main;
     private JLabel headerLabel;
     private JLabel statusLabel;
     private JPanel controlPanel;
 
-    int cid;
+    int custID;
 
     public LogInGUI(){
         prepareGUI();
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
+
     }
 
     public static void main(String[] args) {
         LogInGUI logInGUI = new LogInGUI();
-
+        logInGUI.showTextField();
     }
     private void prepareGUI(){
         main = new JFrame("Login");
-        main.setSize(400,400);
+        for(Window w: Window.getWindows()){
+            GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().setFullScreenWindow(w);
+        }
+        //main.setSize(400,400);
         main.setLayout(new FlowLayout());
         main.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent wE) {
@@ -32,7 +37,9 @@ public class LogInGUI {
         });
         headerLabel = new JLabel("", JLabel.CENTER);
         statusLabel = new JLabel("", JLabel.CENTER);
-
+        Color myColor = new Color(200, 220, 240);
+        main.setBackground(myColor);
+        main.setForeground(Color.cyan);
         statusLabel.setSize(350,100);
 
         controlPanel = new JPanel();
@@ -60,7 +67,7 @@ public class LogInGUI {
              if(userText.getText().equals("mister")&& passwordText.getText().equals("itt"))
              {
                  main.dispose();
-                 new MainGUI(userText.getText(),cid);
+                 new MainGUI(userText.getText(),custID);
              }
              else{
                  String message = "Incorrect username and/or password!\nTry again!";
@@ -72,8 +79,10 @@ public class LogInGUI {
             public void actionPerformed(ActionEvent e) {
                 String name =JOptionPane.showInputDialog(null,"Enter your name");
                 Random r = new Random();
-                cid = r.nextInt(100000);
+                custID = r.nextInt(100000);
+                JOptionPane.showMessageDialog(null,custID);
             }
+
         });
         controlPanel.add(namelabel);
         controlPanel.add(userText);

@@ -1,20 +1,19 @@
 import java.util.*;
 
-public abstract class Account extends Customer{
+public class Account extends Customer{
 
        ArrayList<Customer>customers=new ArrayList<>(35);
+
        public Person accHolder;
        public String name,accid;
-       public float balance;
-       public float interestRate,change;
+       public double balance;
+       public int custID;
+       public double interestRate=0.05f,change;
 
-       public float InterestRateChange(){
-          return interestRate * change;
-       }
 
-       public Account(){this(null,"","",0.0f,0.0f,0.0f);}
+       public Account(){this(null,"","",0.0f,0.0f,0,0.0f);}
 
-       public Account(Person accHolder,String name,String accid,float balance,float interestRate,float change){
+       public Account(Person accHolder,String name,String accid,double balance,double interestRate,int custID,float change){
 
            this.accHolder=accHolder;
            this.name=name;
@@ -22,7 +21,32 @@ public abstract class Account extends Customer{
            this.balance=balance;
            this.interestRate=interestRate;
            this.change=change;
+           this.custID=custID;
+       }
+       double getBalance(){
+           return balance;
+       }
+       int getCustID(){
+           return custID;
+       }
+       void setBalance(double balance){
+           if(this.balance + balance >= 0)
+               this.balance += balance;
+           else
+               this.balance = 0;
+       }
+       void setCustID(int custID){
+           this.custID = custID;
+       }
 
+      public double getInterestRate(){
+           return interestRate;
+       }
+       void setInterestRate(){
+           this.interestRate = interestRate;
+       }
+        void adjustInterestRate(double r){
+           interestRate = r;
        }
 
 }
