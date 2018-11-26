@@ -1,3 +1,7 @@
+//LogInGUI.java
+/**this is the driver class for my program and validates the login
+* details of the user*/
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.*;
@@ -22,13 +26,12 @@ public class LogInGUI extends JFrame{
     public static void main(String[] args) {
         LogInGUI logInGUI = new LogInGUI();
         logInGUI.showTextField();
-    }
-    private void prepareGUI(){
-        main = new JFrame("Login");
         for(Window w: Window.getWindows()){
             GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().setFullScreenWindow(w);
         }
-        //main.setSize(400,400);
+    }
+    private void prepareGUI(){
+        main = new JFrame("Login");
         main.setLayout(new FlowLayout());
         main.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent wE) {
@@ -41,10 +44,8 @@ public class LogInGUI extends JFrame{
         main.setBackground(myColor);
         main.setForeground(Color.cyan);
         statusLabel.setSize(350,100);
-
         controlPanel = new JPanel();
         controlPanel.setLayout(new FlowLayout());
-
         main.add(headerLabel);
         main.add(controlPanel);
         main.add(statusLabel);
@@ -64,8 +65,9 @@ public class LogInGUI extends JFrame{
         loginButton.addActionListener(new ActionListener() {
             @SuppressWarnings("deprecation")
             public void actionPerformed(ActionEvent e) {
-             if(userText.getText().equals("mister")&& passwordText.getText().equals("itt"))
-             {
+
+             if(userText.getText().equals("Sean")&& passwordText.getText().equals("itt"))
+             {   /**closes LogInGUI opens up MainGUI */
                  main.dispose();
                  new MainGUI(userText.getText(),custID);
              }
@@ -77,6 +79,7 @@ public class LogInGUI extends JFrame{
         });
         createAccountButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
+                /**User gives their name and the system outputs back a pin number*/
                 String name =JOptionPane.showInputDialog(null,"Enter your name");
                 Random r = new Random();
                 custID = r.nextInt(100000);

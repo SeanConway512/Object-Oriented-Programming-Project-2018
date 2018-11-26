@@ -1,3 +1,5 @@
+//Person.java
+/**Abstract class used to show inheritance*/
 public abstract class Person {
 
    public String name,address;

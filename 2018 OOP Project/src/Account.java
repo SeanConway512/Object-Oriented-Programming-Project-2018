@@ -42,10 +42,12 @@ public class Account extends Customer{
       public double getInterestRate(){
            return interestRate;
        }
-       void setInterestRate(){
+
+      void setInterestRate(){
            this.interestRate = interestRate;
        }
-        void adjustInterestRate(double r){
+
+      void adjustInterestRate(double r){
            interestRate = r;
        }
 

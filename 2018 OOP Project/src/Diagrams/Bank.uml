@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="139.42499999999998" y="378.0">Account</node>
+    <node x="34.174999999999955" y="655.0">MainGUI</node>
+    <node x="437.17499999999995" y="688.0">CurrentAccount</node>
+    <node x="0.0" y="189.0">Customer</node>
+    <node x="261.0" y="123.0">Employee</node>
+    <node x="223.17499999999995" y="633.0">MortgageAccount</node>
+    <node x="32.674999999999955" y="866.0">LogInGUI</node>
+    <node x="303.17499999999995" y="0.0">Person</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="Employee" target="Person">
+      <point x="0.0" y="-102.5" />
+      <point x="339.5" y="103.0" />
+      <point x="356.79999999999995" y="103.0" />
+      <point x="-17.875" y="36.5" />
+    </edge>
+    <edge source="MainGUI" target="Account">
+      <point x="-42.25" y="-69.5" />
+      <point x="76.42499999999995" y="603.0" />
+      <point x="169.54999999999998" y="603.0" />
+      <point x="-90.375" y="102.5" />
+    </edge>
+    <edge source="Account" target="Customer">
+      <point x="-30.125" y="-102.5" />
+      <point x="229.79999999999998" y="358.0" />
+      <point x="180.75" y="358.0" />
+      <point x="60.25" y="36.5" />
+    </edge>
+    <edge source="LogInGUI" target="MainGUI">
+      <point x="0.0" y="-69.5" />
+      <point x="0.0" y="69.5" />
+    </edge>
+    <edge source="CurrentAccount" target="Account">
+      <point x="0.0" y="-36.5" />
+      <point x="536.175" y="613.0" />
+      <point x="350.29999999999995" y="613.0" />
+      <point x="90.375" y="102.5" />
+    </edge>
+    <edge source="Account" target="Person">
+      <point x="90.375" y="-102.5" />
+      <point x="350.29999999999995" y="358.0" />
+      <point x="439.5" y="358.0" />
+      <point x="439.5" y="93.0" />
+      <point x="428.29999999999995" y="93.0" />
+      <point x="53.624999999999986" y="36.5" />
+    </edge>
+    <edge source="MortgageAccount" target="Account">
+      <point x="0.0" y="-91.5" />
+      <point x="320.17499999999995" y="613.0" />
+      <point x="290.04999999999995" y="613.0" />
+      <point x="30.125" y="102.5" />
+    </edge>
+    <edge source="Customer" target="Person">
+      <point x="0.0" y="-36.5" />
+      <point x="120.5" y="103.0" />
+      <point x="321.04999999999995" y="103.0" />
+      <point x="-53.625" y="36.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="158.0" y="703.5" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

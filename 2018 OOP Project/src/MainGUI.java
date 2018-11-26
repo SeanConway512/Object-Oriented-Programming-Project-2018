@@ -1,3 +1,6 @@
+//MainGUI.java
+/**this is where the input for the deposits and withdrawals are processed*/
+
 import java.util.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -27,10 +30,10 @@ public class MainGUI extends JFrame{
 
         ItemExit.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-
                 System.exit(0);
             }
         });
+
         Account.setMnemonic('A');
         JMenuItem ItemDeposits = new JMenuItem("Deposits");
         ItemDeposits.setMnemonic('D');
@@ -67,6 +70,7 @@ public class MainGUI extends JFrame{
 
             }
         });
+
         ItemWithdraws.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 Double sBal = Double.parseDouble(JOptionPane.showInputDialog(
@@ -90,6 +94,7 @@ public class MainGUI extends JFrame{
 
             }
         });
+
         ItemView.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 statusLabel.setVisible(false);
@@ -136,11 +141,13 @@ public class MainGUI extends JFrame{
                 }
             }
         });
+
         ItemNew.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
 
             }
         });
+
         statusLabel = new JLabel();
 
         statusLabel.setText("Currently Logged In: " + name + " #" + custID);
@@ -151,17 +158,12 @@ public class MainGUI extends JFrame{
     }
     private void prepareGUI() {
         mainFrame = new JFrame("Main");
-
         mainFrame.add(statusLabel);
-
-
         JMenuBar bar = new JMenuBar();
         bar.add(file);
         bar.add(Account);
         mainFrame.setJMenuBar(bar);
-
         mainFrame.setSize(400, 400);
         mainFrame.setVisible(true);
-
     }
 }
